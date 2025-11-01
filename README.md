@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +14,6 @@
       color: #0f172a;
       overflow-x: hidden;
     }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -41,8 +41,6 @@
     nav a:hover {
       color: #2563eb;
     }
-
-    /* Hero Section */
     .hero {
       text-align: center;
       padding: 6rem 10%;
@@ -103,7 +101,6 @@
     .btn-secondary:hover {
       background-color: #bfdbfe;
     }
-
     section {
       padding: 5rem 8%;
       max-width: 1100px;
@@ -118,7 +115,7 @@
       display: inline-block;
       padding-bottom: 0.4rem;
     }
-    .skills-grid, .projects-grid, .experience-grid {
+    .skills-grid, .projects-grid, .experience-grid, .certifications-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
@@ -131,21 +128,19 @@
       border-left: 5px solid #2563eb;
       transition: all 0.3s ease;
       animation: fadeInUp 1.2s ease;
+      text-align: left;
+      position: relative;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .card img.logo {
+      width: 80px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -153,24 +148,6 @@
       background-color: #1e3a8a;
       color: white;
       border-top: 4px solid #2563eb;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav a {
-        display: inline-block;
-        margin: 0.5rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .btn-container {
-        flex-direction: column;
-        align-items: center;
-      }
     }
   </style>
 </head>
@@ -182,6 +159,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -199,19 +177,21 @@
 
   <section id="about">
     <h3>About</h3>
-    <p>I’m a curious and enthusiastic technologist passionate about crafting intelligent backend systems and AI-driven tools that make an impact. After 4+ years at <strong>American Express</strong>, I’m now advancing my expertise as a <strong>Master’s in Computer Science student at The University of Alabama</strong>. My work blends strong engineering fundamentals with creativity, always aiming to build products that are both reliable and human-centered.</p>
+    <p>I’m a curious and enthusiastic technologist passionate about crafting intelligent backend systems and AI-driven tools that make an impact. After 4+ years at <strong>American Express</strong> and <strong>Salesforce projects with Wipro</strong>, I’m now advancing my expertise as a <strong>Master’s in Computer Science student at The University of Alabama</strong>. My work blends strong engineering fundamentals with creativity, always aiming to build products that are both reliable and human-centered.</p>
   </section>
 
   <section id="experience">
     <h3>Experience</h3>
     <div class="experience-grid">
       <div class="card">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="American Express Logo">
         <h4>Software Engineer — American Express</h4>
         <p>Developed and optimized microservices supporting millions of transactions daily. Designed event-driven automation systems and built robust APIs using Java, Spring Boot, and AWS. Collaborated across teams to improve system efficiency by 30% while ensuring high security and scalability standards.</p>
       </div>
       <div class="card">
-        <h4>Graduate Researcher — The University of Alabama</h4>
-        <p>Researching and building AI-enhanced backend architectures. Leading projects integrating LLMs with enterprise APIs for intelligent data retrieval and dynamic automation using Python, FastAPI, and Kubernetes.</p>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Wipro_Primary_Logo_Color_RGB.svg" alt="Wipro Logo">
+        <h4>Salesforce Developer — Wipro Technologies</h4>
+        <p>Customized and optimized Salesforce CRM solutions for enterprise clients, integrating Apex, Lightning Components, and REST APIs. Automated workflows to enhance business efficiency and developed scalable data models supporting client operations across multiple business units.</p>
       </div>
     </div>
   </section>
@@ -222,9 +202,27 @@
       <div class="card">Python, Java, Apex, C++</div>
       <div class="card">FastAPI, Flask, Spring Boot</div>
       <div class="card">AWS, Docker, Kubernetes</div>
-      <div class="card">Microservices, REST APIs, GraphQL</div>
+      <div class="card">Salesforce, LWC, REST APIs, GraphQL</div>
       <div class="card">PyTorch, TensorFlow, Data Engineering</div>
       <div class="card">PostgreSQL, MongoDB, MySQL</div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h3>Certifications, Awards & Accomplishments</h3>
+    <div class="skills-grid">
+      <div class="card">
+        <h4>Salesforce Certified Platform Developer I</h4>
+        <p>Validated expertise in Salesforce Apex, Lightning Web Components, and declarative app development.</p>
+      </div>
+      <div class="card">
+        <h4>Amex GrowthHack'23 Semi-Finalist</h4>
+        <p>Recognized for building AmexTechHub — a smart AI-powered document insight system integrating Slack and Confluence.</p>
+      </div>
+      <div class="card">
+        <h4>Python for Machine Learning — Coursera</h4>
+        <p>Completed specialization focusing on AI model deployment and production-scale ML pipelines using PyTorch and FastAPI.</p>
+      </div>
     </div>
   </section>
 
@@ -241,7 +239,7 @@
       </div>
       <div class="card">
         <h4>AI-Powered Resume Analyzer</h4>
-        <p>Built an NLP-based web app to assess resume content quality and alignment with job descriptions using OpenAI APIs and Flask.</p>
+        <p>Built an NLP-based web app to assess resume quality and alignment with job descriptions using OpenAI APIs and Flask.</p>
       </div>
     </div>
   </section>
