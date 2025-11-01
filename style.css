@@ -37,9 +37,13 @@ body{
 
 /* HERO */
 .hero{
-  position:relative;min-height:82vh;
-  background:url('img/hero-bg.jpg') center/cover fixed no-repeat;
-  display:grid;place-items:center;text-align:center;
+  position: relative;
+  background: rgba(193, 255, 205, 0.7); /* pastel light green, translucent */
+  background-blend-mode: overlay;
+  background-image: url("img/hero-bg.png"); /* optional if you already have hero-bg */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
 .hero__overlay{
   position:absolute;inset:0;background:rgba(242,138,25,.9); /* orange sheet */
