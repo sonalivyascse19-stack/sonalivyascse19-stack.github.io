@@ -58,8 +58,8 @@ img{ max-width: 100%; display: block; }
   display: grid; place-items: center;
   color: #fff;
   /* background image + soft green translucent overlay */
-  background: 
-    linear-gradient(rgba(207,238,225,0.82), rgba(207,238,225,0.82)),
+background: 
+    linear-gradient(rgba(255, 250, 200, 0.95), rgba(255, 240, 150, 0.95)),
     url("img/hero-bg.png") center/cover no-repeat;
 }
 .hero__content{ text-align: center; padding: 70px 0 80px; }
