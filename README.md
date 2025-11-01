@@ -3,314 +3,376 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sonali Vyas — Resume</title>
+  <title>Sonali Vyas • Software Engineer</title>
+  <meta name="description" content="Portfolio of Sonali Vyas — Software Engineer. Backend, AI/ML, Cloud, and Security." />
+
+  <!-- Fonts (fast, no-blocking) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --accent:#0b5fff;
-      --muted:#6b7280;
-      --heading:#0f172a;
-      --mono: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --glass: rgba(11,95,255,0.08);
+    :root {
+      --bg: #0b1220;
+      --panel: #111826;
+      --text: #e6e8ee;
+      --muted: #a9b0c1;
+      --brand: #7c9cff;   /* indigo-300 */
+      --brand-2: #67e8f9; /* cyan-300 */
+      --accent: #a78bfa;  /* violet-300 */
+      --ok: #34d399;      /* emerald-400 */
+      --ring: rgba(124,156,255,.55);
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --maxw: 1100px;
+      --transition: 220ms cubic-bezier(.2,.8,.2,1);
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family:var(--mono);
-      background:linear-gradient(180deg,var(--bg),#fff);
-      color:#111827;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-      display:flex;
-      justify-content:center;
-    }
-    .container{
-      max-width:900px;
-      width:100%;
-      background:var(--card);
-      border-radius:12px;
-      box-shadow:0 8px 30px rgba(15,23,42,0.08);
-      padding:28px;
-      display:grid;
-      grid-template-columns: 1fr 300px;
-      gap:28px;
-      align-items:start;
-    }
-
-    /* header / left column */
-    header{
-      grid-column: 1 / span 2;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      margin-bottom:6px;
-    }
-    .name {
-      display:flex;
-      flex-direction:column;
-    }
-    .name h1{
-      margin:0;
-      font-size:26px;
-      color:var(--heading);
-      letter-spacing: -0.3px;
-    }
-    .name p{
-      margin:6px 0 0 0;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .contact{
-      text-align:right;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .contact a{ color:var(--accent); text-decoration:none; }
-    .contact a:hover{ text-decoration:underline; }
-
-    /* left column content */
-    .left{
-      padding-right:6px;
-    }
-    .section{
-      margin-bottom:18px;
-    }
-    .section h2{
-      font-size:14px;
-      margin:0 0 10px 0;
-      color:var(--heading);
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .section p, .section li{
-      color:#111827;
-      font-size:14px;
-      line-height:1.45;
-      margin:6px 0;
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --text: #0b1220;
+        --muted: #4b5563;
+        --brand: #4f46e5;
+        --brand-2: #0891b2;
+        --accent: #7c3aed;
+        --ok: #059669;
+        --ring: rgba(79,70,229,.3);
+        --border: rgba(15,23,42,.08);
+        --shadow: 0 10px 30px rgba(2,6,23,.08);
+      }
     }
 
-    .job{
-      margin-bottom:10px;
-    }
-    .job .title{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:baseline;
-    }
-    .job .title strong { font-size:15px; color:#0f172a; }
-    .job .meta { color:var(--muted); font-size:13px; }
+    /* light/dark override via toggle */
+    html.theme-dark { --bg:#0b1220; --panel:#111826; --text:#e6e8ee; --muted:#a9b0c1; --brand:#7c9cff; --brand-2:#67e8f9; --accent:#a78bfa; --ok:#34d399; --ring:rgba(124,156,255,.55); --border:rgba(255,255,255,.08); --shadow:0 10px 30px rgba(0,0,0,.35); }
+    html.theme-light { --bg:#f6f7fb; --panel:#fff; --text:#0b1220; --muted:#4b5563; --brand:#4f46e5; --brand-2:#0891b2; --accent:#7c3aed; --ok:#059669; --ring:rgba(79,70,229,.3); --border:rgba(15,23,42,.08); --shadow:0 10px 30px rgba(2,6,23,.08); }
 
-    ul.bullets{ padding-left:18px; margin:6px 0; }
-    ul.bullets li{ margin:6px 0; }
-
-    /* right column */
-    .right{
-      background:linear-gradient(180deg,var(--glass),transparent);
-      border-radius:10px;
-      padding:18px;
-      align-self:start;
-      min-height:120px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    }
-    .skill-list{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .skill-group{ font-size:13px; color:var(--muted); }
-    .skill-group strong{ color:var(--heading); display:block; margin-bottom:6px; font-size:13px; }
-    .pill{
-      display:inline-block;
-      background:#eef2ff;
-      color:var(--accent);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      margin:4px 6px 6px 0;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1000px 600px at 80% -10%, rgba(124,156,255,.25), transparent 60%),
+                  radial-gradient(800px 500px at -10% 0%, rgba(103,232,249,.18), transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    footer{
-      grid-column:1 / span 2;
-      margin-top:10px;
-      font-size:12px;
-      color:var(--muted);
-      text-align:center;
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; letter-spacing: .2px; font-size: 16px;
+      text-decoration: none; color: var(--text);
+    }
+    .brand__logo {
+      width: 28px; height: 28px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 6px 20px rgba(124,156,255,.35), inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    .nav__links a {
+      color: var(--muted); text-decoration: none; font-weight: 600; margin-left: 20px; font-size: 14px;
+      padding: 10px 12px; border-radius: 10px; transition: color var(--transition), background var(--transition);
+    }
+    .nav__links a:hover { color: var(--text); background: var(--panel); box-shadow: var(--shadow); }
+
+    .toggle {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 600; font-size: 13px;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), color var(--transition);
+    }
+    .toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow); color: var(--text); }
+
+    /* Hero */
+    .hero { padding: 80px 0 40px; }
+    .hero__card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 88%, transparent) 0%, var(--panel) 100%);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px;
+      box-shadow: var(--shadow);
+      position: relative; overflow: hidden;
+    }
+    @media (max-width: 900px) { .hero__card { grid-template-columns: 1fr; } }
+
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--muted);
+      border: 1px dashed var(--border);
+      border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 600;
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+    }
+    .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 30%, transparent); }
+
+    h1 { margin: 14px 0 4px; font-size: 40px; line-height: 1.2; letter-spacing: -0.5px; }
+    .lead { color: var(--muted); font-size: 16px; }
+
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      appearance: none; border: 1px solid var(--border); cursor: pointer;
+      padding: 12px 16px; border-radius: 12px; font-weight: 700; letter-spacing: .2px;
+      background: var(--panel); color: var(--text);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      border-color: transparent; color: white; box-shadow: 0 12px 30px rgba(124,156,255,.35);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+
+    .avatar {
+      width: 140px; height: 140px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,.22);
+      border: 4px solid color-mix(in srgb, var(--panel) 70%, transparent);
     }
 
-    /* responsive */
-    @media (max-width:880px){
-      .container{ grid-template-columns: 1fr; padding:18px; }
-      .right{ order: 3; margin-top:6px; }
+    /* Section */
+    section { padding: 36px 0; }
+    .section__title {
+      font-size: 22px; margin: 0 0 18px; letter-spacing: .2px;
     }
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Skills badges */
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .badge {
+      border: 1px solid var(--border); background: color-mix(in srgb, var(--panel) 85%, transparent);
+      color: var(--text); padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 13px;
+    }
+
+    /* Projects grid */
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      border: 1px solid var(--border); background: var(--panel); border-radius: var(--radius-sm);
+      padding: 18px; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--ring); box-shadow: var(--shadow); }
+    .card h3 { margin: 4px 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .card .meta { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .meta .pill { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 26px; }
+    .timeline:before {
+      content: ""; position: absolute; left: 8px; top: 2px; bottom: 2px; width: 2px;
+      background: linear-gradient(var(--brand), var(--brand-2));
+      border-radius: 2px;
+    }
+    .tl-item {
+      position: relative; margin: 0 0 18px; padding: 0 0 0 10px;
+    }
+    .tl-item:before {
+      content: ""; position: absolute; left: -5px; top: 2px; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--panel); border: 2px solid var(--brand);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 20%, transparent);
+    }
+    .tl-h { font-weight: 700; }
+    .tl-s { color: var(--muted); font-size: 13px; }
+
+    /* Footer */
+    footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; text-align: center; }
+    .links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .links a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--border); }
+    .links a:hover { color: var(--text); border-color: var(--ring); }
+
+    /* little focus style */
+    a, button { outline: none; }
+    a:focus-visible, button:focus-visible { box-shadow: 0 0 0 3px var(--ring); border-radius: 10px; }
   </style>
 </head>
 <body>
-  <main class="container" role="main">
-    <header>
-      <div class="name" aria-label="Name and headline">
-        <h1>SONALI VYAS</h1>
-        <p>Master of Science (Computer Science) — University of Alabama (May 2027)</p>
-      </div>
-      <div class="contact" aria-label="Contact information">
-        <div>(659) 261-6562</div>
-        <div><a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a></div>
-        <div><a href="https://www.linkedin.com/in/sonali-vyas" target="_blank" rel="noopener">linkedin.com/in/sonali-vyas</a></div>
-        <div><a href="https://github.com/sonalivyascse19-stack" target="_blank" rel="noopener">github.com/sonalivyascse19-stack</a></div>
-      </div>
-    </header>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>Sonali Vyas</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle" id="themeToggle" type="button" aria-label="Toggle color theme">☀︎ / ☾</button>
+      </nav>
+    </div>
+  </header>
 
-    <!-- main left column -->
-    <section class="left" aria-labelledby="about-heading">
-      <div class="section" id="summary">
-        <h2>Summary</h2>
-        <p>Backend-focused software engineer and M.S. student with 3+ years of professional experience building scalable microservice systems, APIs, and AI-integrated platforms. Passionate about clean design, production-ready code, and shipping features that deliver measurable product impact.</p>
-      </div>
-
-      <div class="section" id="experience">
-        <h2>Experience</h2>
-
-        <article class="job" aria-label="American Express role">
-          <div class="title">
-            <strong>Senior Software Engineer I — American Express</strong>
-            <span class="meta">Sep 2021 — Jul 2025 · Bangalore, India</span>
+  <main id="top" class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__card">
+        <div>
+          <span class="chip"><i></i> Available for Summer 2026 Internships</span>
+          <h1>Building reliable <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;">AI & backend</span> systems that ship.</h1>
+          <p class="lead">
+            I’m <strong>Sonali Vyas</strong> — Software Engineer with 4+ years at American Express, now pursuing my M.S. in CS.
+            I design event-driven microservices, secure APIs, and AI-powered apps on AWS/Kubernetes.
+          </p>
+          <div class="cta">
+            <a class="btn btn--primary" href="Sonali_Vyas_Resume.pdf" download>⬇ Download Resume</a>
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="mailto:sonalivyas.cse19@gmail.com">Email Me</a>
           </div>
-          <ul class="bullets">
-            <li><strong>MDT Offer Enrollment Site Enhancement:</strong> Re-built a high-traffic enrollment site using event-driven microservices and reusable UI components (React & Angular; Apex & SOQL backend). Reduced user clicks by <strong>40%</strong> and improved page load speed by <strong>30%</strong>.</li>
-            <li><strong>OCMT Case Management System:</strong> Implemented predictive AI suggestions and a case assignment engine, integrated securely across platforms—reduced resolution wait times by <strong>40%</strong> and saved agents >15 hours/week.</li>
-            <li><strong>Custom Lite Module:</strong> Built a Lightning Web Components UI enabling granular merchant offer targeting; contributed to ~<strong>$7M</strong> projected annual revenue uplift.</li>
-            <li><em>Tech:</em> Python, Java, Apex, REST APIs, Microservices, Docker, Git, React, Salesforce</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-label="Salesforce role">
-          <div class="title">
-            <strong>Success Engineer — Salesforce</strong>
-            <span class="meta">Jan 2021 — Sep 2021 · Hyderabad, India</span>
-          </div>
-          <ul class="bullets">
-            <li>Implemented advanced Sales Cloud and Experience Cloud features and delivered stakeholder training—improved user adoption by <strong>30%</strong>.</li>
-            <li>Collaborated with global clients on UI configurations and integrations.</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-label="Wipro role">
-          <div class="title">
-            <strong>Project Engineer — Wipro</strong>
-            <span class="meta">May 2019 — Dec 2020 · Jaipur, India</span>
-          </div>
-          <ul class="bullets">
-            <li>Built an automated CPQ quoting system using JavaScript, HTML5, and CSS3—reduced quote generation time by <strong>50%</strong>.</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="section" id="projects">
-        <h2>Selected Projects</h2>
-
-        <article class="job" aria-label="CrisisAssist">
-          <div class="title">
-            <strong>CrisisAssist AI</strong>
-            <span class="meta">Aug 2025 — Present</span>
-          </div>
-          <ul class="bullets">
-            <li>Built a multi-agent emergency response platform with <strong>CrewAI</strong> + <strong>LangGraph</strong>, using Python, FastAPI, React, and PyTorch for event detection.</li>
-            <li>Deployed on AWS with Docker & Kubernetes for real-time, scalable performance and reliability.</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-label="AmexTechHub">
-          <div class="title">
-            <strong>AmexTechHub (GrowthHack’23 Semi-Finalist)</strong>
-            <span class="meta">Project</span>
-          </div>
-          <ul class="bullets">
-            <li>Created a smart, searchable knowledge platform integrating Salesforce, Slack, and Confluence with AI-driven recommendations.</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="section" id="education">
-        <h2>Education</h2>
-        <p><strong>University of Alabama</strong> — Master of Science in Computer Science (Expected May 2027)</p>
-        <p><strong>Rajasthan Technical University</strong> — B.Tech, Computer Science (Honors) (May 2019)</p>
+        </div>
+        <div style="display:flex;justify-content:center;align-items:center;">
+          <div class="avatar" aria-hidden="true" title="Avatar placeholder"></div>
+        </div>
       </div>
     </section>
 
-    <!-- right column -->
-    <aside class="right" aria-labelledby="skills-heading">
-      <div class="section" id="skills">
-        <h2 id="skills-heading">Skills</h2>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section__title">About</h2>
+      <div class="panel">
+        Passionate about building <strong>secure, scalable</strong> software with a crisp UX. At Amex, I re-architected a
+        high-traffic offer enrollment system (thousands of enrollments/day), cutting load times by <strong>30%</strong> and user clicks by <strong>40%</strong>.
+        I love fast feedback loops, clean design systems, and code that earns its keep in production.
+      </div>
+    </section>
 
-        <div class="skill-list">
-          <div class="skill-group">
-            <strong>Frontend</strong>
-            <div>
-              <span class="pill">React</span>
-              <span class="pill">HTML5</span>
-              <span class="pill">CSS3</span>
-              <span class="pill">Lightning Web Components</span>
-              <span class="pill">Tailwind</span>
-            </div>
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section__title">Skills</h2>
+      <div class="panel skills">
+        <span class="badge">Python</span>
+        <span class="badge">Java</span>
+        <span class="badge">FastAPI</span>
+        <span class="badge">Spring Boot</span>
+        <span class="badge">REST / gRPC</span>
+        <span class="badge">Microservices</span>
+        <span class="badge">Docker</span>
+        <span class="badge">Kubernetes</span>
+        <span class="badge">AWS (EC2, Lambda, S3)</span>
+        <span class="badge">PostgreSQL</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">PyTorch</span>
+        <span class="badge">LangGraph / CrewAI</span>
+        <span class="badge">GitHub Actions (CI/CD)</span>
+        <span class="badge">Security & Compliance</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section__title">Experience</h2>
+      <div class="panel timeline">
+        <div class="tl-item">
+          <div class="tl-h">Senior Software Engineer I — American Express</div>
+          <div class="tl-s">Sep 2021 – Jul 2025 · Bangalore, India</div>
+          <div>
+            Rebuilt offer enrollment into event-driven microservices (React/Angular + Apex/SOQL).
+            <strong>−30%</strong> load time, <strong>−40%</strong> clicks. AI-assisted case resolution cut wait times by <strong>40%</strong>;
+            automated workflows saved agents <strong>15+ hrs/week</strong>. Deployed on Docker/K8s with secure CI/CD.
           </div>
-
-          <div class="skill-group">
-            <strong>Backend & Systems</strong>
-            <div>
-              <span class="pill">FastAPI</span>
-              <span class="pill">Spring Boot</span>
-              <span class="pill">REST APIs</span>
-              <span class="pill">Microservices</span>
-              <span class="pill">Event-driven</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <strong>AI / ML</strong>
-            <div>
-              <span class="pill">PyTorch</span>
-              <span class="pill">LangGraph</span>
-              <span class="pill">CrewAI</span>
-              <span class="pill">Multi-Agent Systems</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <strong>Cloud & Infra</strong>
-            <div>
-              <span class="pill">Docker</span>
-              <span class="pill">Kubernetes</span>
-              <span class="pill">AWS</span>
-              <span class="pill">GitHub Actions</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <strong>Databases</strong>
-            <div>
-              <span class="pill">PostgreSQL</span>
-              <span class="pill">MySQL</span>
-              <span class="pill">SOQL</span>
-            </div>
-          </div>
-
+        </div>
+        <div class="tl-item">
+          <div class="tl-h">Success Engineer — Salesforce</div>
+          <div class="tl-s">Jan 2021 – Sep 2021 · Hyderabad, India</div>
+          <div>Implemented Sales/Experience Cloud features and led stakeholder enablement to boost adoption by <strong>30%</strong>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-h">Project Engineer — Wipro</div>
+          <div class="tl-s">May 2019 – Dec 2020 · Jaipur, India</div>
+          <div>Built automated CPQ workflow (JS/HTML/CSS) reducing quote generation time by <strong>50%</strong>.</div>
         </div>
       </div>
+    </section>
 
-      <div class="section" id="links">
-        <h2>Quick Links</h2>
-        <p class="meta"><a href="https://www.linkedin.com/in/sonali-vyas" target="_blank" rel="noopener">LinkedIn</a></p>
-        <p class="meta"><a href="https://github.com/sonalivyascse19-stack" target="_blank" rel="noopener">GitHub</a></p>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section__title">Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>CrisisAssist AI</h3>
+          <p>Multi-agent system (CrewAI + LangGraph) with FastAPI + PyTorch for real-time event detection & response. Deployed on AWS/EKS.</p>
+          <div class="meta">
+            <span class="pill">FastAPI</span><span class="pill">PyTorch</span><span class="pill">Kubernetes</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>AmexTechHub</h3>
+          <p>AI-powered knowledge system connecting Salesforce, Slack, and Confluence; CI/CD automations for smart updates.</p>
+          <div class="meta">
+            <span class="pill">Python</span><span class="pill">CI/CD</span><span class="pill">APIs</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Offer Targeting Module</h3>
+          <p>Lightning Web Components for granular merchant targeting, contributing to ~<strong>$7M</strong> projected annual uplift.</p>
+          <div class="meta">
+            <span class="pill">LWC</span><span class="pill">Apex</span><span class="pill">SOQL</span>
+          </div>
+        </article>
       </div>
-    </aside>
+    </section>
 
-    <footer>
-      <div>Resume generated for web / GitHub Pages view • Based on Sonali Vyas — copy for applications with small edits as needed</div>
-    </footer>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section__title">Contact</h2>
+      <div class="panel">
+        Let’s build something great.  
+        📬 <a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a> · 
+        🔗 <a href="https://www.linkedin.com/in/sonali-vyas" target="_blank" rel="noopener">LinkedIn</a> · 
+        💻 <a href="https://github.com/sonalivyascse19-stack" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="links">
+      <a href="#top">Back to top ↑</a>
+      <a href="Sonali_Vyas_Resume.pdf" download>Resume</a>
+      <a href="mailto:sonalivyas.cse19@gmail.com">Email</a>
+    </div>
+    <div style="margin-top:10px;">© <span id="y"></span> Sonali Vyas</div>
+  </footer>
+
+  <script>
+    // simple year + theme toggle
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.className = saved;
+
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.className;
+      const next = current === 'theme-dark' ? 'theme-light' :
+                   current === 'theme-light' ? '' : 'theme-dark';
+      document.documentElement.className = next;
+      if (next) localStorage.setItem('theme', next); else localStorage.removeItem('theme');
+    });
+  </script>
 </body>
 </html>
