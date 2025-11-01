@@ -1,3 +1,6 @@
+html {
+  scroll-padding-top: 80px; /* Adjust based on your navbar height */
+}
 :root{
   --bg:#ffffff;
   --text:#111;
@@ -59,7 +62,8 @@ body{
 
 /* SECTIONS */
 .section{padding:72px 0}
-.section--tight{padding-top:10px}
+.section--tight{padding-top: 4rem;
+  padding-bottom: 4rem;}
 .section--accent{background:var(--accent);color:#fff}
 .section__title{
   text-align:center;font-size:36px;margin:12px 0 28px;letter-spacing:1px

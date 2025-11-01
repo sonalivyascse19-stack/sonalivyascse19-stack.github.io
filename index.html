@@ -10,6 +10,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    html {
+      scroll-padding-top: 80px; /* Prevents navbar overlap */
+    }
+  </style>
 </head>
 <body>
   <!-- ===== NAVBAR ===== -->
@@ -59,31 +65,28 @@
     <div class="container">
       <h2 class="section__title">About Me</h2>
 
-    
+      <div class="about__text">
+        <ul class="about__facts">
+          <li><span>Full Name:</span> Sonali Vyas</li>
+          <li><span>Email:</span> <a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a></li>
+          <li><span>Location:</span> Alabama, United States</li>
+        </ul>
 
-        <div class="about__text">
-          <ul class="about__facts">
-            <li><span>Full Name:</span> Sonali Vyas</li>
-            <li><span>Email:</span> <a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a></li>
-            <li><span>Location:</span> Alabama, United States</li>
-          </ul>
+        <h3>Hello there!</h3>
+        <p>
+          I’m Sonali, a Master’s student in Computer Science at the University of Alabama and a
+          former Software Engineer passionate about blending engineering fundamentals with creative design.
+          I love building scalable systems, secure APIs, and AI-assisted tools that make real impact.
+        </p>
+        <p>
+          Previously at American Express and Wipro, I delivered production features across microservices,
+          Salesforce ecosystems, and cloud platforms. I’m now exploring how AI and automation can empower developers
+          and improve team efficiency.
+        </p>
 
-          <h3>Hello there!</h3>
-          <p>
-            I’m Sonali, a Master’s student in Computer Science at the University of Alabama and a
-            former Software Engineer passionate about blending engineering fundamentals with creative design.
-            I love building scalable systems, secure APIs, and AI-assisted tools that make real impact.
-          </p>
-          <p>
-            Previously at American Express and Wipro, I delivered production features across microservices,
-            Salesforce ecosystems, and cloud platforms. I’m now exploring how AI and automation can empower developers
-            and improve team efficiency.
-          </p>
-
-          <div class="about__links">
-            <a class="btn icon" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn icon" href="https://github.com/sonalivyascse19-stack" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
+        <div class="about__links">
+          <a class="btn icon" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn icon" href="https://github.com/sonalivyascse19-stack" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
 
@@ -91,9 +94,59 @@
     </div>
   </section>
 
-  <!-- (resume, interests, skills, projects, contact remain unchanged) -->
   <!-- ===== RESUME ===== -->
-  <!-- keep the rest of your file content exactly the same -->
+  <section id="resume" class="section section--tight">
+    <div class="container">
+
+      <div class="timeline__group">
+        <div class="timeline__label">WORK EXPERIENCE</div>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
+            <div class="timeline__card">
+              <h3>Software Engineer — American Express</h3>
+              <span class="meta">Remote/India · 2019 – 2024</span>
+              <p>
+                Built and optimized microservices powering millions of transactions, reduced load times by ~30%,
+                designed event-driven automation, and shipped secure APIs on AWS/Kubernetes.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
+            <div class="timeline__card">
+              <h3>Salesforce Developer — Wipro Technologies</h3>
+              <span class="meta">India · 2017 – 2019</span>
+              <p>
+                Delivered enterprise CRM customizations with Apex, Lightning components, REST integrations and
+                workflow automation across multiple business units.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__group">
+        <div class="timeline__label">EDUCATION</div>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="timeline__card">
+              <h3>MS — Computer Science</h3>
+              <span class="meta">University of Alabama · 2024 – Present</span>
+              <p>
+                Focus on AI-assisted systems, scalable backends, and distributed/cloud infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
