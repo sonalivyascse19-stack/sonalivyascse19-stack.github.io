@@ -52,15 +52,21 @@ img{ max-width: 100%; display: block; }
 .nav__toggle{ display:none; }
 
 /* ====== HERO ====== */
-.hero{
+.hero {
   position: relative;
-  min-height: 72vh;
-  display: grid; place-items: center;
+  min-height: 100vh; /* was 72vh — now covers full viewport height */
+  display: grid;
+  place-items: center;
   color: #fff;
-  /* background image + soft green translucent overlay */
-background: 
+
+  /* pink gradient overlay + background image */
+  background:
     linear-gradient(rgba(183, 97, 115, 0.9), rgba(200, 120, 135, 0.9)),
     url("img/hero-bg.png") center/cover no-repeat;
+
+  /* optional: subtle padding to avoid content sticking to bottom */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .hero__content{ text-align: center; padding: 70px 0 80px; }
 
