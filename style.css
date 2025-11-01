@@ -59,8 +59,8 @@ img{ max-width: 100%; display: block; }
   color: #fff;
   /* background image + soft green translucent overlay */
 background: 
-    linear-gradient(rgba(255, 245, 179, 0.9), rgba(255, 240, 153, 0.9)),
-  url("img/hero-bg.png") center/cover no-repeat;
+    linear-gradient(rgba(183, 97, 115, 0.9), rgba(200, 120, 135, 0.9)),
+    url("img/hero-bg.png") center/cover no-repeat;
 }
 .hero__content{ text-align: center; padding: 70px 0 80px; }
 
