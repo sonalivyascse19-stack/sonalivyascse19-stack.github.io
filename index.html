@@ -3,26 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sonali Vyas</title>
+  <meta name="description" content="Sonali Vyas - AI Engineer and Software Engineer with 6 years of experience. MS CS student at the University of Alabama. Portfolio showcasing experience in AI systems, microservices, and cloud platforms." />
+  <title>Sonali Vyas - Portfolio</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    html {
-      scroll-padding-top: 80px; /* Prevents navbar overlap */
-    }
-  </style>
 </head>
 <body>
   <!-- ===== NAVBAR ===== -->
-  <header class="nav">
+  <header class="nav" id="navbar">
     <div class="container nav__wrap">
       <a class="brand" href="#home">Sonali Vyas</a>
-      <nav class="nav__links">
+      <nav class="nav__links" id="navLinks">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
@@ -31,145 +28,428 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="nav__toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
+  <!-- Mobile Nav Overlay -->
+  <div class="nav__mobile" id="mobileNav">
+    <button class="close-btn" id="mobileNavClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#interests">Interests</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
-    <div class="hero__overlay"></div>
+    <div class="hero__mesh"></div>
+    <canvas id="heroCanvas"></canvas>
     <div class="container hero__content">
       <img class="hero__avatar" src="img/profile.jpeg" alt="Sonali Vyas" />
-      <h1 class="hero__name">— Sonali Vyas —</h1>
-      <h2 class="hero__subtitle">MS CS Student @ University of Alabama</h2>
+      <h1 class="hero__name"><span class="gradient-text">Sonali Vyas</span></h1>
+      <h2 class="hero__subtitle" id="typedText"></h2>
       <p class="hero__tagline">
-        I am a believer; “You never know what's possible until you open yourself up to the unknown.”
+        I am a believer - "You never know what's possible until you open yourself up to the unknown."
       </p>
       <div class="hero__icons">
-        <a class="icon" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a class="icon" href="https://github.com/sonalivyascse19-stack" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a class="icon" href="resume/Sonali_Resume.pdf" target="_blank" aria-label="Resume">
-          <i class="fa-regular fa-file-lines"></i>
-        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="icon-btn" href="https://github.com/sonalivyascse19-stack" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a class="icon-btn" href="resume/Sonali_Resume.pdf" target="_blank" aria-label="Resume"><i class="fa-regular fa-file-lines"></i></a>
       </div>
-      <a class="hero__scroll" href="#about" aria-label="Scroll"><i class="fa-solid fa-angles-down"></i></a>
+      <a class="hero__scroll" href="#about" aria-label="Scroll down"><i class="fa-solid fa-angles-down"></i></a>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section__title">About Me</h2>
-
-      <div class="about__text">
-        <ul class="about__facts">
-          <li><span>Full Name:</span> Sonali Vyas</li>
-          <li><span>Email:</span> <a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a></li>
-          <li><span>Location:</span> Alabama, United States</li>
-        </ul>
-
-        <h3>Hello there!</h3>
-        <p>
-          I’m Sonali, a Master’s student in Computer Science at the University of Alabama and a
-          former Software Engineer passionate about blending engineering fundamentals with creative design.
-          I love building scalable systems, secure APIs, and AI-assisted tools that make real impact.
-        </p>
-        <p>
-          Previously at American Express and Wipro, I delivered production features across microservices,
-          Salesforce ecosystems, and cloud platforms. I’m now exploring how AI and automation can empower developers
-          and improve team efficiency.
-        </p>
-
-        <div class="about__links">
-          <a class="btn icon" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a class="btn icon" href="https://github.com/sonalivyascse19-stack" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+      <div class="section__header reveal">
+        <span class="section__badge">About</span>
+        <h2 class="section__title">Get to know me</h2>
+        <p class="section__subtitle">AI Engineer · Software Engineer · MS CS Student</p>
       </div>
 
-      <h2 class="section__title section__title--sub">My Resume <i class="fa-regular fa-file-lines"></i></h2>
+      <div class="about__grid">
+        <div class="about__card reveal">
+          <ul class="about__facts">
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-user"></i></span>
+              <span class="fact-label">Name</span>
+              <strong>Sonali Vyas</strong>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="fact-label">Email</span>
+              <a href="mailto:sonalivyas.cse19@gmail.com">sonalivyas.cse19@gmail.com</a>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="fact-label">Location</span>
+              <span>Alabama, United States</span>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <span class="fact-label">Education</span>
+              <span>MS CS, University of Alabama (Expected May 2027)</span>
+            </li>
+          </ul>
+          <div class="about__stats">
+            <div class="stat">
+              <div class="stat__number">6+</div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">4</div>
+              <div class="stat__label">Companies</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">∞</div>
+              <div class="stat__label">Curiosity</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__card about__bio reveal">
+          <h3>Hello there! 👋</h3>
+          <p>
+            I'm Sonali, an AI Engineer and Software Engineer with 6 years of experience building production systems across Python, Java, and cloud platforms. I'm currently pursuing my MS in Computer Science at the University of Alabama, conducting ML and data assimilation research in collaboration with NOAA.
+          </p>
+          <p>
+            Previously at American Express (promoted three times) and Salesforce, I shipped AI-powered case management systems, event-driven microservices, and full-stack platforms. I'm experienced in designing multi-agent AI systems, deploying LLM-powered applications, and connecting complex technical systems with real-world business outcomes.
+          </p>
+          <div class="about__links">
+            <a class="btn btn--primary" href="resume/Sonali_Resume.pdf" target="_blank">
+              <i class="fa-regular fa-file-lines"></i> Download Resume
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== RESUME ===== -->
-  <section id="resume" class="section section--tight">
+  <section id="resume" class="section section--alt">
     <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">Resume</span>
+        <h2 class="section__title">Experience & Education</h2>
+        <p class="section__subtitle">My professional journey so far</p>
+      </div>
 
-      <div class="timeline__group">
-        <div class="timeline__label">WORK EXPERIENCE</div>
-
+      <div class="timeline__group reveal">
+        <div class="timeline__label"><i class="fa-solid fa-suitcase"></i> WORK EXPERIENCE</div>
         <div class="timeline">
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
             <div class="timeline__card">
-              <h3>Senior Software Engineer I — American Express</h3>
-              <span class="meta">Remote/India · 2021 – 2025</span>
-              <p>
-                Built and optimized microservices powering millions of transactions, reduced load times by ~30%,
-                designed event-driven automation, and shipped secure APIs on AWS/Kubernetes.
-              </p>
+              <h3>Graduate Research Assistant - University of Alabama</h3>
+              <span class="meta">Tuscaloosa, Alabama · Jan 2026 - Present</span>
+              <p>Contributing to NOAA's Next Generation Water Resources Modeling Framework. Developing ML and data assimilation capabilities for national-scale environmental simulation using scientific Python.</p>
             </div>
           </div>
-
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
             <div class="timeline__card">
-              <h3>Developement Success Engineer — Salesforce</h3>
-              <span class="meta">Remote/India · 2020 – 2021</span>
-              <p>
-                Built and optimized microservices powering millions of transactions, reduced load times by ~30%,
-                designed event-driven automation, and shipped secure APIs on AWS/Kubernetes.
-              </p>
+              <h3>Senior Software Engineer II - American Express</h3>
+              <span class="meta">Bangalore, India · Sep 2021 - Jul 2025</span>
+              <p>Promoted three times. Architected an AI-powered case management system using Salesforce Next Best Action, reducing wait times by 40%. Led full-stack rebuild of offer enrollment platform. Built LWC UI driving ~$7M in projected annual revenue.</p>
             </div>
           </div>
-
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
             <div class="timeline__card">
-              <h3>Project Engineer — Wipro Technologies</h3>
-              <span class="meta">India · 2019 – 2020</span>
-              <p>
-                Delivered enterprise CRM customizations with Apex, Lightning components, REST integrations and
-                workflow automation across multiple business units.
-              </p>
+              <h3>Success Engineer - Salesforce Inc.</h3>
+              <span class="meta">Hyderabad, India · Jan 2021 - Sep 2021</span>
+              <p>Implemented Sales Cloud and Experience Cloud features for global enterprise clients. Improved user adoption by 30% through customized configurations and stakeholder training.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"><i class="fa-solid fa-suitcase"></i></div>
+            <div class="timeline__card">
+              <h3>Project Engineer - Wipro</h3>
+              <span class="meta">Jaipur, India · May 2019 - Dec 2020</span>
+              <p>Built an automated CPQ quoting system end-to-end, reducing partner portal quote generation time by 50% through streamlined configuration and automation.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="timeline__group">
-        <div class="timeline__label">EDUCATION</div>
-
+      <div class="timeline__group reveal">
+        <div class="timeline__label"><i class="fa-solid fa-graduation-cap"></i> EDUCATION</div>
         <div class="timeline">
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
             <div class="timeline__card">
-              <h3>MS — Computer Science</h3>
-              <span class="meta">University of Alabama · 2025 – Present</span>
-              <p>
-                Focus on AI-assisted systems, scalable backends, and distributed/cloud infrastructure.
-              </p>
+              <h3>M.S. in Computer Science</h3>
+              <span class="meta">University of Alabama · Expected May 2027</span>
+              <p>Coursework: Computer Algorithms, Artificial Intelligence, Computer Vision.</p>
             </div>
           </div>
-
-          <div class="timeline__item">
+          <div class="timeline__item reveal">
             <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
             <div class="timeline__card">
-              <h3>Bachelor of Technology — Computer Science (Honors)</h3>
+              <h3>B.Tech in Computer Science, Honors</h3>
               <span class="meta">Rajasthan Technical University, India · May 2019</span>
-              <p>
-                Graduated with honors, focusing on software engineering, data structures, and system design principles.
-              </p>
+              <p>Graduated with honors, focusing on software engineering, data structures, and system design principles.</p>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
+
+  <!-- ===== INTERESTS ===== -->
+  <section id="interests" class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">Interests</span>
+        <h2 class="section__title">What excites me</h2>
+        <p class="section__subtitle">Areas I'm passionate about exploring and building in</p>
+      </div>
+
+      <div class="interests__grid">
+        <div class="interest-card reveal">
+          <div class="interest-card__icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>Multi-Agent AI Systems</h3>
+          <p>Designing agentic AI pipelines with LangGraph and CrewAI, orchestrating specialized agents for real-time decision making and emergency response.</p>
+        </div>
+        <div class="interest-card reveal">
+          <div class="interest-card__icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>ML & Data Assimilation</h3>
+          <p>Applying machine learning and data assimilation to environmental modeling, integrating real-world observational data with predictive ML pipelines at national scale.</p>
+        </div>
+        <div class="interest-card reveal">
+          <div class="interest-card__icon"><i class="fa-solid fa-cloud"></i></div>
+          <h3>Cloud & Distributed Systems</h3>
+          <p>Building resilient, scalable architectures on AWS and Kubernetes that handle millions of transactions with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">Skills</span>
+        <h2 class="section__title">Technical Toolkit</h2>
+        <p class="section__subtitle">Technologies and tools I work with</p>
+      </div>
+
+      <div class="skills__grid">
+        <div class="skills__col reveal">
+          <h3><i class="fa-solid fa-code"></i> Languages & Frameworks</h3>
+          <div class="circles">
+            <div class="circle" data-pct="90">
+              <div class="circle__ring"></div>
+              <span class="circle__label">Python</span>
+            </div>
+            <div class="circle" data-pct="85">
+              <div class="circle__ring"></div>
+              <span class="circle__label">Java</span>
+            </div>
+            <div class="circle" data-pct="80">
+              <div class="circle__ring"></div>
+              <span class="circle__label">JavaScript</span>
+            </div>
+            <div class="circle" data-pct="80">
+              <div class="circle__ring"></div>
+              <span class="circle__label">FastAPI</span>
+            </div>
+            <div class="circle" data-pct="80">
+              <div class="circle__ring"></div>
+              <span class="circle__label">React</span>
+            </div>
+            <div class="circle" data-pct="75">
+              <div class="circle__ring"></div>
+              <span class="circle__label">PyTorch</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__col reveal">
+          <h3><i class="fa-solid fa-wrench"></i> Tools & Platforms</h3>
+          <div class="bars">
+            <div class="bar__item">
+              <div class="bar__header"><span>AWS (EC2, S3, Lambda)</span><span>90%</span></div>
+              <div class="bar__track"><div class="bar__fill" data-width="90"></div></div>
+            </div>
+            <div class="bar__item">
+              <div class="bar__header"><span>Docker & Kubernetes</span><span>85%</span></div>
+              <div class="bar__track"><div class="bar__fill" data-width="85"></div></div>
+            </div>
+            <div class="bar__item">
+              <div class="bar__header"><span>Git & CI/CD</span><span>90%</span></div>
+              <div class="bar__track"><div class="bar__fill" data-width="90"></div></div>
+            </div>
+            <div class="bar__item">
+              <div class="bar__header"><span>Salesforce Platform</span><span>80%</span></div>
+              <div class="bar__track"><div class="bar__fill" data-width="80"></div></div>
+            </div>
+            <div class="bar__item">
+              <div class="bar__header"><span>PostgreSQL / MongoDB</span><span>80%</span></div>
+              <div class="bar__track"><div class="bar__fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">Projects</span>
+        <h2 class="section__title">Featured Work</h2>
+        <p class="section__subtitle">A selection of projects I've built</p>
+      </div>
+
+      <div class="projects__grid">
+        <div class="project-card reveal">
+          <div style="overflow:hidden;border-radius:var(--radius) var(--radius) 0 0">
+            <img class="project-card__img" src="img/p1.png" alt="CrisisAssist AI" />
+          </div>
+          <div class="project-card__body">
+            <h3>CrisisAssist AI</h3>
+            <p>Production-grade multi-agent AI system for emergency response. Specialized agents coordinate across a real-time event detection pipeline with React frontend, FastAPI backend, and PyTorch ML model.</p>
+            <div class="project-card__tags">
+              <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">AWS</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div style="overflow:hidden;border-radius:var(--radius) var(--radius) 0 0">
+            <img class="project-card__img" src="img/p2.png" alt="NOAA Hydrologic Modeling" />
+          </div>
+          <div class="project-card__body">
+            <h3>NOAA Hydrologic Modeling Framework</h3>
+            <p>ML and data assimilation pipeline for national-scale environmental simulation. CFE model calibration with Spotpy DDS using AORC/HRRR forcing data for flood prediction.</p>
+            <div class="project-card__tags">
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Scientific Computing</span><span class="tag">BMI</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div style="overflow:hidden;border-radius:var(--radius) var(--radius) 0 0">
+            <img class="project-card__img" src="img/p3.png" alt="AmexTechHub" />
+          </div>
+          <div class="project-card__body">
+            <h3>AmexTechHub - GrowthHack 2023</h3>
+            <p>AI-augmented knowledge management platform converting static internal documents into a searchable system with Salesforce, Slack, and Confluence integration. Company-wide semi-finalist.</p>
+            <div class="project-card__tags">
+              <span class="tag">Python</span><span class="tag">Salesforce</span><span class="tag">Slack API</span><span class="tag">AI/ML</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div style="overflow:hidden;border-radius:var(--radius) var(--radius) 0 0">
+            <img class="project-card__img" src="img/p4.png" alt="AI Case Management" />
+          </div>
+          <div class="project-card__body">
+            <h3>AI-Powered Case Management (OCMT)</h3>
+            <p>Salesforce Next Best Action system auto-suggesting resolution paths with skill-based agent assignment. Reduced cardmember wait times by 40%, saved agents 15+ hours/week.</p>
+            <div class="project-card__tags">
+              <span class="tag">Salesforce</span><span class="tag">Apex</span><span class="tag">LWC</span><span class="tag">React</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section--alt">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__badge">Contact</span>
+        <h2 class="section__title">Let's Connect</h2>
+        <p class="section__subtitle">Have a question or want to work together?</p>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <a class="contact__item" href="mailto:sonalivyas.cse19@gmail.com">
+            <div class="contact__item-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact__item-text">
+              <h4>Email</h4>
+              <p>sonalivyas.cse19@gmail.com</p>
+            </div>
+          </a>
+          <a class="contact__item" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank">
+            <div class="contact__item-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="contact__item-text">
+              <h4>LinkedIn</h4>
+              <p>linkedin.com/in/sonali-vyas</p>
+            </div>
+          </a>
+          <a class="contact__item" href="https://github.com/sonalivyascse19-stack" target="_blank">
+            <div class="contact__item-icon"><i class="fab fa-github"></i></div>
+            <div class="contact__item-text">
+              <h4>GitHub</h4>
+              <p>sonalivyascse19-stack</p>
+            </div>
+          </a>
+        </div>
+
+        <form class="contact__form reveal" onsubmit="event.preventDefault(); alert('Thanks for reaching out! I\'ll get back to you soon.');">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" placeholder="Hi Sonali, I'd love to chat about..." required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <p class="footer__text">© 2025 <span>Sonali Vyas</span>. Crafted with 💜</p>
+      <div class="footer__icons">
+        <a class="icon-btn" href="https://www.linkedin.com/in/sonali-vyas/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="icon-btn" href="https://github.com/sonalivyascse19-stack" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a class="icon-btn" href="mailto:sonalivyas.cse19@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script src="script.js"></script>
 </body>
